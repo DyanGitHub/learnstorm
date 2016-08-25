@@ -12,11 +12,15 @@ import android.widget.TextView;
 
 import com.dy.mystorm.R;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 /**
  * 作者： Dyan on 2016/8/22 16:40
  * 描述：
  */
-public class Fragment2 extends Fragment implements ActivityOne.CallBack {
+public class Fragment2 extends Fragment implements View.OnClickListener {
 	ActivityOne mActivity;
 	@Override
 	public void onAttach(Context context) {
@@ -28,7 +32,14 @@ public class Fragment2 extends Fragment implements ActivityOne.CallBack {
 	public void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		mActivity.log();
+		EventBus.getDefault().register(this);
 	}
+	@Subscribe(threadMode = ThreadMode.MAIN)
+	public void onClickEvent(MessageEvent messageEvent)
+	{
+		textView.setText(messageEvent.msg.getString("msg"));
+	}
+
 	TextView textView;
 	View mView;
 	@Nullable
@@ -37,6 +48,9 @@ public class Fragment2 extends Fragment implements ActivityOne.CallBack {
 		View view=inflater.inflate(R.layout.fragment_2,null);
 		textView= (TextView) view.findViewById(R.id.text);
 		textView.setText("test");
+		view.findViewById(R.id.b1).setOnClickListener(this);
+		view.findViewById(R.id.b2).setOnClickListener(this);
+		view.findViewById(R.id.b3).setOnClickListener(this);
 		mView=view;
 		return view;
 	}
@@ -58,11 +72,25 @@ public class Fragment2 extends Fragment implements ActivityOne.CallBack {
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
+		EventBus.getDefault().unregister(this);
 		Log.d("dy", "f2 ondestory");
 	}
 
+
 	@Override
-	public void onClick(int value) {
-		textView.setText(value);
+	public void onClick(View v) {
+		Log.d("dy", "selfonclick:"+Thread.currentThread().getId());
+		switch (v.getId())
+		{
+			case R.id.b1:
+				textView.setText("b1");
+				break;
+			case R.id.b2:
+				textView.setText("b2");
+				break;
+			case R.id.b3:
+				textView.setText("b3");
+				break;
+		}
 	}
 }

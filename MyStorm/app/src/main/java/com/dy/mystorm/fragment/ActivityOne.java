@@ -40,9 +40,19 @@ public class ActivityOne extends FragmentActivity implements Fragment1.CallBack 
 //		mFragment2.resfreshView(String.valueOf(value));
 		//mFragme2d的View一直为null
 //		Log.d("dy", mFragment2.textView == null ? "null" : "is null");
-		mFragment2.onClick(value);
+//		mFragment2.onClick(value);
 	}
 	interface CallBack{
 		void onClick(int value);
 	}
+//	//获取本机号码
+//	public void getMyPhoneNum()
+//	{
+//		TelephonyManager tMgr = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+//		String mPhoneNumber = tMgr.getLine1Number();
+//		tMgr.getCellLocation();
+//		//获取不到手机号啊
+//		Log.d("dy", "mPhoneNumber:"+tMgr.getCellLocation());
+//	}
+
 }

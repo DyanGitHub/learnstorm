@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 
 import com.dy.mystorm.R;
 
+import org.greenrobot.eventbus.EventBus;
+
 /**
  * 作者： Dyan on 2016/8/22 16:40
  * 描述：
@@ -22,6 +24,9 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
 		switch (v.getId())
 		{
 			case R.id.b1:
+				Bundle msg=new Bundle();
+				msg.putString("msg","信息传递成功！");
+				EventBus.getDefault().post(new MessageEvent(msg));
 				mCallBack.onClick(1);
 				break;
 			case R.id.b2:
