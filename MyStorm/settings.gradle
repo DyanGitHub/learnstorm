@@ -1,1 +1,1 @@
-include ':app', ':myimmersive'
+include ':app', ':myimmersive', ':mythreadupdateui', ':myeasynetcomment', ':myiflytek', ':mylogger'

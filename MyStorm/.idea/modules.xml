@@ -4,7 +4,11 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MyStorm.iml" filepath="$PROJECT_DIR$/MyStorm.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myeasynetcomment/myeasynetcomment.iml" filepath="$PROJECT_DIR$/myeasynetcomment/myeasynetcomment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myiflytek/myiflytek.iml" filepath="$PROJECT_DIR$/myiflytek/myiflytek.iml" />
       <module fileurl="file://$PROJECT_DIR$/myimmersive/myimmersive.iml" filepath="$PROJECT_DIR$/myimmersive/myimmersive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mylogger/mylogger.iml" filepath="$PROJECT_DIR$/mylogger/mylogger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mythreadupdateui/mythreadupdateui.iml" filepath="$PROJECT_DIR$/mythreadupdateui/mythreadupdateui.iml" />
     </modules>
   </component>
 </project>
